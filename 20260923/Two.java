@@ -14,7 +14,7 @@ public class Two
 
         double Volume()
         {
-            return (4.0/3)*PI*r*r;
+            return (4.0/3)*PI*r*r*r;
         }
     }
 
@@ -39,7 +39,7 @@ public class Two
     {
         double transfer(double Fahrenheit)
         {
-            return (Fahrenheit-32)*5/9;
+            return (Fahrenheit-32)*5.0/9;
         }
     }
 
@@ -49,7 +49,7 @@ public class Two
 
         int move(int pos)
         {
-            return (Bin >> pos-1);
+            return ((Bin >> (pos-1)) & 1);
         }
     }
 
@@ -69,7 +69,11 @@ public class Two
         Two.Temperature temperature = two.new Temperature();
         double Fahrenheit = sc.nextDouble();
         double Celsius = temperature.transfer(Fahrenheit);
+        System.out.println(Celsius);
 
-        
+        Two.Binary bin = two.new Binary();
+        bin.Bin=sc.nextInt();
+        int pos=sc.nextInt();
+        System.out.println(bin.move(pos));
     }
 }
