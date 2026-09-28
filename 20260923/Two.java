@@ -75,5 +75,7 @@ public class Two
         bin.Bin=sc.nextInt();
         int pos=sc.nextInt();
         System.out.println(bin.move(pos));
+
+        sc.close();
     }
 }
