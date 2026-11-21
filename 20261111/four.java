@@ -1,29 +1,29 @@
-public class four {
-    
-    class student {
-        private String name;
-        private int count;
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("zhangming");
+        s1.showName();
+        Student s2 = new Student("lihua");
+        s2.showName();
+        Student s3 = new Student("wangfang");
+        s3.showName();
+        System.out.println("current_number" + Student.getCount());
+    }
+}
 
-        student(String name)
-        {
-            count++;
-            this.name = name;
-        }
-        public void showname()
-        {
-            System.out.println(name);
-        }
-        public int getcount()
-        {
-            return count;
-        }
+class Student {
+    private String name;
+    private static int count = 0;
+
+    public Student(String name) {
+        this.name = name;
+        count++;
     }
 
-    public class main {
+    public void showName() {
+        System.out.println(name);
+    }
 
-        public void main(String args[])
-        {
-            
-        }
+    public static int getCount() {
+        return count;
     }
 }
